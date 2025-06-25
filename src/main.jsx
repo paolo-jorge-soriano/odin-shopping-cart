@@ -6,12 +6,16 @@ import "./styles/index.css";
 
 import App from "./components/App";
 import Men from "./components/Men";
+import Women from "./components/Women";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{ path: "men", element: <Men /> }],
+    children: [
+      { path: "men", element: <Men /> },
+      { path: "women", element: <Women /> },
+    ],
   },
 ]);
 

@@ -10,19 +10,26 @@ export default function App() {
     <>
       <header className="header">
         <div className="logo-container">
-          <img src={storeLogo} alt="store-logo" />
-          <h1>Thrift Shop</h1>
+          <Link to="/">
+            <img src={storeLogo} alt="store-logo" />
+          </Link>
         </div>
 
         <nav className="nav-container">
-          <Link to="/">Home</Link>
-          <Link to="men">Men</Link>
+          <Link to="men" className="nav-link">
+            MEN
+          </Link>
+
+          <Link to="women" className="nav-link">
+            WOMEN
+          </Link>
         </nav>
 
         <div className="user-tools">
           <img src={cartIcon} alt="cart-icon" />
         </div>
       </header>
+
       <Outlet />
     </>
   );

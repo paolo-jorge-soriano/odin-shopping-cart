@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import "../styles/section.css";
 
-export default function Men() {
+export default function Women() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchMensClothing = async () => {
+    const fetchWomensClothing = async () => {
       try {
         const response = await fetch(
-          "https://fakestoreapi.com/products/category/men%27s%20clothing"
+          "https://fakestoreapi.com/products/category/women%27s%20clothing"
         );
         const data = await response.json();
         setProducts(data);
@@ -17,12 +17,12 @@ export default function Men() {
       }
     };
 
-    fetchMensClothing();
+    fetchWomensClothing();
   }, []);
 
   return (
     <main className="content-container">
-      <h1>Men</h1>
+      <h1>Women</h1>
       <div className="grid">
         {products.map((item) => (
           <div className="card" key={item.id}>

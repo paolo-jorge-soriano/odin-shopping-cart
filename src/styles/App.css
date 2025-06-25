@@ -3,6 +3,7 @@
   align-items: center;
   grid-template-columns: 0.5fr 1fr 0.5fr;
   outline: 1px solid black;
+  padding: 0 20px;
 }
 
 .logo-container {
@@ -22,6 +23,15 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  text-decoration: 3px solid underline;
 }
 
 .user-tools {
