@@ -1,0 +1,23 @@
+.cart-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 100px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.cart-card {
+  display: flex;
+  gap: 30px;
+  border-bottom: 2px solid lightgray;
+  padding: 20px;
+}
+
+.cart-card img {
+  width: 200px;
+}
