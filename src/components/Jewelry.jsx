@@ -1,26 +1,26 @@
 import { useState, useEffect } from "react";
 import "../styles/section.css";
 
-export default function Women() {
+export default function Jewelry() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchWomensClothing = async () => {
+    const fetchJewelry = async () => {
       try {
-        const response = await fetch("https://fakestoreapi.com/products/category/women%27s%20clothing");
+        const response = await fetch("https://fakestoreapi.com/products/category/jewelery");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
-        console.error("Error fetching men's clothing:", error);
+        console.error("Error fetching jewelry:", error);
       }
     };
 
-    fetchWomensClothing();
+    fetchJewelry();
   }, []);
 
   return (
     <main className="content-container">
-      <h1>Women</h1>
+      <h1>Jewelry</h1>
       <div className="grid">
         {products.map((product) => (
           <div className="card" key={product.id}>

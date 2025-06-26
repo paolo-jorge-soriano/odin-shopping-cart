@@ -7,6 +7,8 @@ import "./styles/index.css";
 import App from "./components/App";
 import Men from "./components/Men";
 import Women from "./components/Women";
+import Jewelry from "./components/Jewelry";
+import Cart from "./components/Cart";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,8 @@ const router = createBrowserRouter([
     children: [
       { path: "men", element: <Men /> },
       { path: "women", element: <Women /> },
+      { path: "jewelry", element: <Jewelry /> },
+      { path: "cart", element: <Cart /> },
     ],
   },
 ]);

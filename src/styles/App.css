@@ -1,3 +1,8 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   display: grid;
   align-items: center;
@@ -22,20 +27,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: black;
+.nav-link p {
+  font-size: 1.2rem;
 }
 
 .nav-link:hover {
-  text-decoration: 3px solid underline;
+  text-decoration: 2px solid underline;
+  text-underline-offset: 15px;
 }
 
-.user-tools {
+.cart {
   display: flex;
   justify-content: flex-end;
+}
+
+.cart-link {
+  display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.main {
+  padding: 20px;
 }
