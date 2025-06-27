@@ -20,20 +20,49 @@ export default function Cart() {
           {cart.map((item) => (
             <div className="cart-card" key={item.id}>
               <img src={item.image} alt={item.title} />
-              <div className="cart-info">
-                <h3>{item.title}</h3>
-                <p>Price: ${item.price}</p>
-                <p>Quantity: {item.quantity}</p>
-                <p>Subtotal: ${(item.price * item.quantity).toFixed(2)}</p>
+              <div className="item-info-container">
+                <div className="item-info">
+                  <h3>{item.title}</h3>
+                  <p>{item.category}</p>
+                  <p>${item.price}</p>
+                </div>
+                <div className="qty-subtotal">
+                  <p>Quantity: {item.quantity}</p>
+                  <p>Subtotal: ${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="cart-summary">
-        <h1>Summary</h1>
-        <h3>Total: ${getTotal()}</h3>
+      <div className="right-container">
+        <div className="cart-summary">
+          <div>
+            <h2>Summary</h2>
+            <h2>{cart.length} item(s)</h2>
+          </div>
+
+          <div>
+            <p>Subtotal</p>
+            <p>${getTotal()}</p>
+          </div>
+
+          <div>
+            <p>Shipping</p>
+            <p>FREE</p>
+          </div>
+
+          <div>
+            <h3>Total</h3>
+            <h3>${getTotal()}</h3>
+          </div>
+        </div>
+
+        <div className="checkout">
+          <button>Checkout</button>
+          <button>Continue Shopping</button>
+        </div>
       </div>
     </div>
   );

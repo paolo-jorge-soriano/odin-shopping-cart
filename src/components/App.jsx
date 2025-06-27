@@ -4,6 +4,8 @@ import { Link, Outlet } from "react-router-dom";
 import "../styles/App.css";
 import storeLogo from "../assets/img/store-logo.svg";
 import cartIcon from "../assets/img/cart-black-icon.svg";
+import favoriteIcon from "../assets/img/favorite-icon.svg";
+import searchIcon from "../assets/img/search-icon.svg";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -44,7 +46,9 @@ export default function App() {
           </Link>
         </nav>
 
-        <div className="cart">
+        <div className="user-tools">
+          <img src={searchIcon} alt="search-icon" />
+          <img src={favoriteIcon} alt="favorite-icon" />
           <Link to="/cart" className="cart-link">
             <img src={cartIcon} alt="cart-icon" />
             <span className="cart-count">{cart.length}</span>
