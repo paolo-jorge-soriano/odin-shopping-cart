@@ -60,8 +60,8 @@ export default function Cart() {
         </div>
 
         <div className="checkout">
-          <button>Checkout</button>
-          <button>Continue Shopping</button>
+          <button className="btn-checkout">Checkout</button>
+          <button className="btn-continue-shopping">Continue Shopping</button>
         </div>
       </div>
     </div>

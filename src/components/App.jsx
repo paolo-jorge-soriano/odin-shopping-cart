@@ -7,6 +7,11 @@ import cartIcon from "../assets/img/cart-black-icon.svg";
 import favoriteIcon from "../assets/img/favorite-icon.svg";
 import searchIcon from "../assets/img/search-icon.svg";
 
+import facebookLogo from "../assets/img/facebook-logo.svg";
+import tiktokLogo from "../assets/img/tiktok-logo.svg";
+import twitterLogo from "../assets/img/twitter-logo.svg";
+import instagramLogo from "../assets/img/instagram-logo.svg";
+
 export default function App() {
   const [cart, setCart] = useState([]);
 
@@ -25,11 +30,12 @@ export default function App() {
 
   return (
     <div className="app">
-      <header className="header">
+      <header className="header-container">
         <div className="logo-container">
           <Link to="/">
             <img src={storeLogo} alt="store-logo" />
           </Link>
+          <h1>Urbane</h1>
         </div>
 
         <nav className="nav-container">
@@ -56,9 +62,60 @@ export default function App() {
         </div>
       </header>
 
-      <main className="main">
+      <main className="main-container">
         <Outlet context={{ cart, addToCart }} />
       </main>
+
+      <footer className="footer-container">
+        <div className="footer-top">
+          <div className="footer-content link">
+            <h3>About Urbane</h3>
+            <p>Information</p>
+            <p>Careers</p>
+            <p>Sustainability</p>
+            <p>Online Gift Service</p>
+          </div>
+
+          <div className="footer-content link">
+            <h3>Help</h3>
+            <p>FAQ</p>
+            <p>Return Policy</p>
+            <p>Bulk Order</p>
+            <p>Accessibility</p>
+          </div>
+
+          <div className="footer-content link">
+            <h3>Account</h3>
+            <p>Urbane App</p>
+            <p>Membership</p>
+            <p>Profile</p>
+            <p>Coupons</p>
+          </div>
+
+          <div className="footer-content">
+            <h3>E-Newsletter</h3>
+            <p>Subscribe for news on our latest arrivals, exclusive promotions, and events.</p>
+            <button className="btn-newsletter">Subscribe Now</button>
+
+            <div className="social-links">
+              <img src={facebookLogo} alt="facebook-logo" />
+              <img src={twitterLogo} alt="twitter-logo" />
+              <img src={instagramLogo} alt="instagram-logo" />
+              <img src={tiktokLogo} alt="tiktok-logo" />
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <div className="legal-links link">
+            <p>Privacy Policy</p>
+            <p>Terms of Sale</p>
+            <p>Terms of Use</p>
+            <p>Cookie Preferences</p>
+          </div>
+          <p>Copyright &copy; Urbane. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }

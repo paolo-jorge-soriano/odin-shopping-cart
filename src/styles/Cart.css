@@ -68,3 +68,22 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.btn-checkout,
+.btn-continue-shopping {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 13px 0;
+  cursor: pointer;
+}
+
+.btn-checkout {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.btn-continue-shopping {
+  background-color: white;
+  border: 1px solid black;
+}
