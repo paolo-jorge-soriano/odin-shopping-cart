@@ -4,6 +4,11 @@ import "../styles/Cart.css";
 export default function Cart() {
   const { cart } = useOutletContext();
 
+  const toTitleCase = (str) => {
+    let strSplit = str.toLowerCase().split(" ");
+    return strSplit.map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  };
+
   const getTotal = () => {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
   };
@@ -23,7 +28,7 @@ export default function Cart() {
               <div className="item-info-container">
                 <div className="item-info">
                   <h3>{item.title}</h3>
-                  <p>{item.category}</p>
+                  <p>{toTitleCase(item.category)}</p>
                   <p>${item.price}</p>
                 </div>
                 <div className="qty-subtotal">

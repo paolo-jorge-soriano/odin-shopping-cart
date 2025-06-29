@@ -13,9 +13,13 @@
 
 .logo-container {
   grid-column: 1 / 2;
+}
+
+.logo-container > a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 5px;
 }
 
 .logo-container img {

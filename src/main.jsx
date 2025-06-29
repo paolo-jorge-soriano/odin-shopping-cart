@@ -9,6 +9,7 @@ import Men from "./components/Men";
 import Women from "./components/Women";
 import Jewelry from "./components/Jewelry";
 import Cart from "./components/Cart";
+import Product from "./components/Product";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "women", element: <Women /> },
       { path: "jewelry", element: <Jewelry /> },
       { path: "cart", element: <Cart /> },
+      { path: "product/:id", element: <Product /> },
     ],
   },
 ]);

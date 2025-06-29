@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/section.css";
 
 export default function Women() {
@@ -11,7 +12,7 @@ export default function Women() {
         const data = await response.json();
         setProducts(data);
       } catch (error) {
-        console.error("Error fetching men's clothing:", error);
+        console.error("Error fetching women's clothing:", error);
       }
     };
 
@@ -19,17 +20,17 @@ export default function Women() {
   }, []);
 
   return (
-    <main className="content-container">
+    <div className="content-container">
       <h1>Women</h1>
       <div className="grid">
         {products.map((product) => (
-          <div className="card" key={product.id}>
+          <Link to={`/product/${product.id}`} className="card" key={product.id}>
             <img src={product.image} alt={product.title} />
             <h4 className="title">{product.title}</h4>
             <p>${product.price}</p>
-          </div>
+          </Link>
         ))}
       </div>
-    </main>
+    </div>
   );
 }

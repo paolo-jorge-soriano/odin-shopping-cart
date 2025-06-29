@@ -34,8 +34,8 @@ export default function App() {
         <div className="logo-container">
           <Link to="/">
             <img src={storeLogo} alt="store-logo" />
+            <h1>Urbane</h1>
           </Link>
-          <h1>Urbane</h1>
         </div>
 
         <nav className="nav-container">
