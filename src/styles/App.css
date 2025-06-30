@@ -13,6 +13,7 @@
 
 .logo-container {
   grid-column: 1 / 2;
+  width: max-content;
 }
 
 .logo-container > a {

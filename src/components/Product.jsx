@@ -12,19 +12,19 @@ export default function Product() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-        const data = await res.json();
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+        const data = await response.json();
         setProduct(data);
-      } catch (err) {
-        console.error("Failed to fetch product", err);
+      } catch (error) {
+        console.error("Failed to fetch product:", error);
       }
     };
 
     fetchProduct();
   }, [id]);
 
-  const handleQuantity = (delta) => {
-    setQuantity((prev) => Math.max(1, prev + delta));
+  const handleQuantity = (qty) => {
+    setQuantity((prev) => Math.max(1, prev + qty));
   };
 
   if (!product) return <p>Loading...</p>;
@@ -37,13 +37,21 @@ export default function Product() {
         <p className="price">${product.price}</p>
         <p>{product.description}</p>
 
-        <div className="quantity-controls">
-          <button onClick={() => handleQuantity(-1)}>-</button>
-          <span>{quantity}</span>
-          <button onClick={() => handleQuantity(1)}>+</button>
+        <div className="quantity-controls-container">
+          <div className="quantity-controls">
+            <button onClick={() => handleQuantity(-1)}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => handleQuantity(1)}>+</button>
+          </div>
+
+          <div className="availability">
+            <p>In Stock</p>
+          </div>
         </div>
 
-        <button onClick={() => addToCart(product, quantity)}>Add to Cart</button>
+        <button onClick={() => addToCart(product, quantity)} className="btn-add-to-cart">
+          Add to Cart
+        </button>
       </div>
     </div>
   );

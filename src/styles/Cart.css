@@ -2,14 +2,14 @@
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
-  /* justify-content: space-between; */
-  gap: 100px;
+  gap: 80px;
 }
 
 .cart-items {
   display: flex;
   flex-direction: column;
   padding: 20px 0;
+  width: 750px;
 }
 
 .cart-card {
@@ -33,7 +33,7 @@
 .item-info {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .qty-subtotal {
@@ -86,4 +86,8 @@
 .btn-continue-shopping {
   background-color: white;
   border: 1px solid black;
+}
+
+.empty-cart {
+  height: 60vh;
 }

@@ -14,7 +14,11 @@ export default function Cart() {
   };
 
   if (cart.length === 0) {
-    return <h2>Your cart is empty.</h2>;
+    return (
+      <div className="empty-cart">
+        <h2>Your cart is empty.</h2>
+      </div>
+    );
   }
 
   return (
