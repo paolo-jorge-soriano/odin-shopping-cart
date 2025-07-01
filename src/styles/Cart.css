@@ -3,7 +3,7 @@
   display: flex;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 20px 40px;
+  padding: 40px;
 }
 
 .cart-container {

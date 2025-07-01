@@ -36,7 +36,7 @@ export default function App() {
         <div className="logo-container">
           <Link to="/">
             <img src={storeLogo} alt="store-logo" />
-            <h1>Urbane</h1>
+            <h1 className="store-name">Urbane</h1>
           </Link>
         </div>
 
