@@ -12,6 +12,8 @@ import tiktokLogo from "../assets/img/tiktok-logo.svg";
 import twitterLogo from "../assets/img/twitter-logo.svg";
 import instagramLogo from "../assets/img/instagram-logo.svg";
 
+import bannerBg from "../assets/img/banner-bg.jpg";
+
 export default function App() {
   const [cart, setCart] = useState([]);
 
