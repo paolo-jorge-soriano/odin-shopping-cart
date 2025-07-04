@@ -53,10 +53,12 @@ export default function App() {
 
         <div className="user-tools">
           <img src={searchIcon} alt="search-icon" />
-          <Link to="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>
-            <img src={cartIcon} alt="cart-icon" />
-            <span className="cart-count">{cart.length}</span>
-          </Link>
+          <div className="minicart-container">
+            <Link to="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>
+              <img src={cartIcon} alt="cart-icon" />
+              {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+            </Link>
+          </div>
 
           <button className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
             ☰

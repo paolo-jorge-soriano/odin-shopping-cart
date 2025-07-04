@@ -65,6 +65,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 15px;
+  position: relative;
 }
 
 .user-tools img {
@@ -72,10 +73,30 @@
   cursor: pointer;
 }
 
+.minicart-container {
+  position: relative;
+}
+
 .cart-link {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cart-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
 
 .hamburger {
