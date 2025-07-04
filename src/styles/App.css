@@ -11,7 +11,7 @@
   display: grid;
   align-items: center;
   grid-template-columns: 0.5fr 1fr 0.5fr;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   outline: 2px solid lightgray;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   z-index: 3;
@@ -40,6 +40,7 @@
   font-family: "Millenia";
   letter-spacing: 2px;
   font-size: 2.5rem;
+  padding: 1rem 2rem;
 }
 
 .nav-container {
@@ -65,6 +66,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 15px;
+  padding: 1rem 2rem;
   position: relative;
 }
 

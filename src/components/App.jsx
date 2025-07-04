@@ -67,7 +67,7 @@ export default function App() {
       </header>
 
       <main className="main-container">
-        <Outlet context={{ cart, addToCart }} />
+        <Outlet context={{ cart, addToCart, setCart }} />
       </main>
 
       <footer className="footer-container">

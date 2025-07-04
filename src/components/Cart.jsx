@@ -2,11 +2,15 @@ import { useOutletContext } from "react-router-dom";
 import "../styles/Cart.css";
 
 export default function Cart() {
-  const { cart } = useOutletContext();
+  const { cart, setCart } = useOutletContext();
 
   const toTitleCase = (str) => {
     let strSplit = str.toLowerCase().split(" ");
     return strSplit.map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  };
+
+  const handleRemove = (id) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
   const getTotal = () => {
@@ -29,6 +33,9 @@ export default function Cart() {
         <div className="cart-items">
           {cart.map((item) => (
             <div className="cart-card" key={item.id}>
+              <button className="btn-remove-product" onClick={() => handleRemove(item.id)}>
+                X
+              </button>
               <img src={item.image} alt={item.title} />
               <div className="item-info-container">
                 <div className="item-info">
