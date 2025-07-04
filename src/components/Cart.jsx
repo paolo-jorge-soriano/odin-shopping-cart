@@ -24,7 +24,7 @@ export default function Cart() {
 
   return (
     <div className="cart-container">
-      <div>
+      <div className="left-container">
         <h1>Shopping Cart</h1>
         <div className="cart-items">
           {cart.map((item) => (

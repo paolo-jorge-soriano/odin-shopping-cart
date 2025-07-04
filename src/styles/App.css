@@ -11,10 +11,13 @@
   display: grid;
   align-items: center;
   grid-template-columns: 0.5fr 1fr 0.5fr;
-  padding: 0 40px;
+  padding: 1rem 2rem;
   outline: 2px solid lightgray;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  z-index: 1;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 .logo-container {
@@ -36,7 +39,7 @@
 .store-name {
   font-family: "Millenia";
   letter-spacing: 2px;
-  font-size: 2.7rem;
+  font-size: 2.5rem;
 }
 
 .nav-container {
@@ -57,14 +60,15 @@
 }
 
 .user-tools {
+  grid-column: 3 / 4;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .user-tools img {
-  width: 27px;
+  width: 25px;
   cursor: pointer;
 }
 
@@ -72,6 +76,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
 }
 
 .footer-container {
@@ -101,7 +112,7 @@
   font-size: 1.1rem;
   font-weight: bold;
   padding: 10px 0;
-  width: 80%;
+  width: 100%;
   border: none;
   background-color: white;
   cursor: pointer;
@@ -137,10 +148,47 @@
 .footer-bottom {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
 }
 
 .legal-links {
   display: flex;
+  align-items: flex-start;
   gap: 30px;
+}
+
+/* TABLET and MOBILE */
+@media screen and (max-width: 950px) {
+  .nav-container {
+    grid-column: 1 / -1;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    padding: 16px 24px;
+    border-top: 1px solid lightgray;
+    z-index: 100;
+  }
+
+  .nav-container.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 0;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .footer-top,
+  .legal-links {
+    flex-direction: column;
+  }
 }

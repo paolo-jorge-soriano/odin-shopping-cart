@@ -1,10 +1,11 @@
 .product-page {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 100px 20px;
+  gap: 100px;
 }
 
 .product-img {
@@ -72,4 +73,11 @@
 
 .btn-add-to-cart:hover {
   background-color: #303030;
+}
+
+/* TABLET and MOBILE */
+@media screen and (max-width: 950px) {
+  .product-page {
+    flex-direction: column;
+  }
 }

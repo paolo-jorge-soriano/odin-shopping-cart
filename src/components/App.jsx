@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import "../styles/App.css";
-import storeLogo from "../assets/img/store-logo.svg";
+
 import cartIcon from "../assets/img/cart-black-icon.svg";
-import favoriteIcon from "../assets/img/favorite-icon.svg";
 import searchIcon from "../assets/img/search-icon.svg";
 
 import facebookLogo from "../assets/img/facebook-logo.svg";
@@ -12,10 +11,9 @@ import tiktokLogo from "../assets/img/tiktok-logo.svg";
 import twitterLogo from "../assets/img/twitter-logo.svg";
 import instagramLogo from "../assets/img/instagram-logo.svg";
 
-import bannerBg from "../assets/img/banner-bg.jpg";
-
 export default function App() {
   const [cart, setCart] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const addToCart = (product, quantity) => {
     setCart((prevCart) => {
@@ -35,32 +33,34 @@ export default function App() {
       <header className="header-container">
         <div className="logo-container">
           <Link to="/">
-            <img src={storeLogo} alt="store-logo" />
             <h1 className="store-name">Urbane</h1>
           </Link>
         </div>
 
-        <nav className="nav-container">
-          <Link to="men" className="nav-link">
+        <nav className={`nav-container ${menuOpen ? "open" : ""}`}>
+          <Link to="men" className="nav-link" onClick={() => setMenuOpen(false)}>
             <p>MEN</p>
           </Link>
 
-          <Link to="women" className="nav-link">
+          <Link to="women" className="nav-link" onClick={() => setMenuOpen(false)}>
             <p>WOMEN</p>
           </Link>
 
-          <Link to="jewelry" className="nav-link">
+          <Link to="jewelry" className="nav-link" onClick={() => setMenuOpen(false)}>
             <p>JEWELRY</p>
           </Link>
         </nav>
 
         <div className="user-tools">
           <img src={searchIcon} alt="search-icon" />
-          <img src={favoriteIcon} alt="favorite-icon" />
-          <Link to="/cart" className="cart-link">
+          <Link to="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>
             <img src={cartIcon} alt="cart-icon" />
             <span className="cart-count">{cart.length}</span>
           </Link>
+
+          <button className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
+            ☰
+          </button>
         </div>
       </header>
 
